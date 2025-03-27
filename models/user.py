@@ -1,17 +1,18 @@
 from abc import ABC, abstractmethod
 
 class User(ABC):
-    def __init__(self, name):
+    def __init__(self, name,ssid):
         self.name = name
+        self.id = ssid
 
     @abstractmethod
     def get_role(self):
         pass
 
 class Student(User):
-    def __init__(self, name, student_id):
-        super().__init__(name)
-        self.student_id = student_id
+    def __init__(self, name, student_id,phone_no):
+        super().__init__(name,student_id)
+        self.phone_no = phone_no
         self.borrowed_books = []
 
     def get_role(self):
